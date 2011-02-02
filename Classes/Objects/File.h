@@ -17,16 +17,19 @@
 	NSString *name;
 	CGFloat percent;
 	NSString *size;
-	NSString *speed;
+	NSInteger speed;
 	NSString *status;
 }
 
+- (NSString *)humanReadableSpeed;
+
+@property (nonatomic, readonly) BOOL finished;
 @property (nonatomic, retain) NSString *downloaded;
 @property (nonatomic, retain) NSString *hoster;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) CGFloat percent;
 @property (nonatomic, retain) NSString *size;
-@property (nonatomic, retain) NSString *speed;
+@property (nonatomic, assign) NSInteger speed;
 @property (nonatomic, retain) NSString *status;
 
 @end

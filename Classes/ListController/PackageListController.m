@@ -10,18 +10,20 @@
 
 #import "JDConnection.h"
 
-#import "Package.h"
+#import "FileListController.h"
 #import "PackageTableViewCell.h"
 
 #define kPackageCellHeight 65
 
 @implementation PackageListController
 
+@synthesize fileListController;
+
 - (id)init
 {
 	if((self = [super init]))
 	{
-		self.title = NSLocalizedString(@"Packages", @"Title of Packages List");
+		self.title = NSLocalizedString(@"Downloads", @"Title of Packages List");
 		packages = [[NSMutableArray alloc] init];
 	}
 	return self;
@@ -29,9 +31,23 @@
 
 - (void)dealloc
 {
+	if(fileListController.packageListController == self)
+		fileListController.packageListController = nil;
+
+	[fileListController release];
 	[packages release];
 
 	[super dealloc];
+}
+
+- (FileListController *)fileListController
+{
+	if(fileListController == nil)
+	{
+		fileListController = [[FileListController alloc] init];
+		fileListController.packageListController = self;
+	}
+	return fileListController;
 }
 
 /* layout */
@@ -43,6 +59,37 @@
 	_tableView.dataSource = self;
 	_tableView.sectionHeaderHeight = 0;
 	_tableView.rowHeight = kPackageCellHeight;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	if(IS_IPHONE())
+		[_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
+}
+
+- (Package *)packageForPackageName:(NSString *)name
+{
+	for(Package *package in packages)
+	{
+		if([package.name isEqualToString:name])
+			return package;
+	}
+	return nil;
+}
+
+/* trigger reload */
+- (void)reloadData
+{
+	[_refreshHeaderView setTableLoadingWithinScrollView:_tableView];
+	[self emptyData];
+	[NSThread detachNewThreadSelector:@selector(fetchData) toTarget:self withObject:nil];
+}
+
+/* remove existing data */
+- (void)emptyData
+{
+	[packages removeAllObjects];
+	[_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 /* fetch packages */
@@ -75,12 +122,27 @@
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:_tableView];
 	[_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-	// if nothing selected, select first item
+	if(fileListController)
+	{
+		[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
+	}
+	if(IS_IPAD() && [_tableView indexPathForSelectedRow] == nil)
+	{
+		[_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+	}
 }
 
 #pragma mark -
 #pragma mark UITableView delegate methods
 #pragma mark -
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	self.fileListController.package = [packages objectAtIndex:indexPath.row];
+
+	if(IS_IPHONE())
+		[self.navigationController pushViewController:fileListController animated:YES];
+}
 
 /* cell for row */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

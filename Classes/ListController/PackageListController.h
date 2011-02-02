@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ReloadableListController.h"
 #import "DataSourceDelegate.h"
+#import "ReloadableListController.h"
+
+@class FileListController;
+@class Package;
 
 @interface PackageListController : ReloadableListController <UITableViewDelegate,
 															UITableViewDataSource,
@@ -17,6 +20,12 @@
 {
 @private
 	NSMutableArray *packages;
+	FileListController *fileListController;
 }
+
+- (void)reloadData;
+- (Package *)packageForPackageName:(NSString *)name;
+
+@property (nonatomic, retain) FileListController *fileListController;
 
 @end

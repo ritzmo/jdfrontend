@@ -13,7 +13,7 @@
 #else
 	#define IS_IPAD() (NO)
 #endif
-#define IS_IPHONE (!IS_IPAD())
+#define IS_IPHONE() (!IS_IPAD())
 
 // lite/full
 #ifdef BUILD_JDFRONTEND_LITE

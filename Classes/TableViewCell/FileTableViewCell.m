@@ -1,28 +1,28 @@
 //
-//  PackageTableViewCell.m
+//  FileTableViewCell.m
 //  JDFrontend
 //
 //  Created by Moritz Venn on 02.02.11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "PackageTableViewCell.h"
+#import "FileTableViewCell.h"
 
-NSString *kPackageCell_ID = @"PackageCell_ID";
+NSString *kFileCell_ID = @"FileCell_ID";
 
-@interface PackageTableViewCell()
+@interface FileTableViewCell()
 - (UILabel *)newLabelWithPrimaryColor:(UIColor *) primaryColor selectedColor:(UIColor *) selectedColor fontSize:(CGFloat) fontSize bold:(BOOL) bold;
 @end
 
-#define kPackageCellNameSize 14
+#define kFileCellNameSize 14
 #define kLeftMargin 5
 #define kRightMargin 5
 #define kTopMargin 5
 #define kBottomMargin 5
 
-@implementation PackageTableViewCell
+@implementation FileTableViewCell
 
-@synthesize package;
+@synthesize File;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,11 +32,11 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 		
 		nameLabel = [self newLabelWithPrimaryColor:[UIColor blackColor]
 									 selectedColor:[UIColor whiteColor]
-										  fontSize:kPackageCellNameSize
+										  fontSize:kFileCellNameSize
 											  bold:YES];
 		detailsLabel = [self newLabelWithPrimaryColor:[UIColor blackColor]
 									 selectedColor:[UIColor whiteColor]
-										  fontSize:kPackageCellNameSize
+										  fontSize:kFileCellNameSize
 											  bold:YES];
 		progress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
 
@@ -44,32 +44,28 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 		[contentView addSubview:detailsLabel];
 		[contentView addSubview:progress];
 
-		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		self.accessoryType = UITableViewCellAccessoryNone;
 	}
 	return self;
 }
 
-- (void)setPackage:(Package *)new
+- (void)setFile:(File *)new
 {
-	if(package == new) return;
+	if(file == new) return;
 
-	[package release];
-	package = [new retain];
+	[file release];
+	file = [new retain];
 
-	nameLabel.text = package.name;
-	progress.progress = package.percent/100.0f;
+	nameLabel.text = file.name;
+	progress.progress = file.percent/100.0f;
 
-	if(package.finished)
+	if(file.percent >= 100 || !file.speed)
 	{
-		detailsLabel.text = NSLocalizedString(@"completed", @"");
-	}
-	else if(package.inProgress)
-	{
-		detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"[%d/%d] %@ @ %@", @""), package.inProgress, package.total, package.size, package.speed];
+		detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%.2f%% of %@", @""), file.percent, file.size];
 	}
 	else
 	{
-		detailsLabel.text = [NSString stringWithFormat:@"[0/%d]", package.total];
+		detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%.2f%% of %@ @ %@", @""), file.percent, file.size, [file humanReadableSpeed]];
 	}
 
 	[self setNeedsLayout];
@@ -79,7 +75,7 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 {
 	[super layoutSubviews];
 	const CGRect contentRect = self.contentView.bounds;
-	CGRect frame = CGRectMake(contentRect.origin.x + kLeftMargin, kTopMargin, contentRect.size.width - kLeftMargin - kRightMargin, kPackageCellNameSize + 3);
+	CGRect frame = CGRectMake(contentRect.origin.x + kLeftMargin, kTopMargin, contentRect.size.width - kLeftMargin - kRightMargin, kFileCellNameSize + 3);
 	nameLabel.frame = frame;
 
 	// FIXME: progress height appears to be fixed, so find it out instead of using evil voodoo
@@ -88,7 +84,7 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 	progress.frame = frame;
 	
 	frame.origin.y += frame.size.height + 5;
-	frame.size.height = kPackageCellNameSize + 3;
+	frame.size.height = kFileCellNameSize + 3;
 	detailsLabel.frame = frame;
 }
 

@@ -13,4 +13,9 @@
 
 @synthesize inProgress, total, files, loaded, name, percent, size, speed, todo;
 
+- (BOOL)finished
+{
+	return (percent >= 100);
+}
+
 @end

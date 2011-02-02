@@ -22,9 +22,10 @@
 	NSString *todo;
 }
 
+@property (nonatomic, readonly) BOOL finished;
 @property (nonatomic, assign) NSInteger inProgress;
 @property (nonatomic, assign) NSInteger total;
-@property (nonatomic, assign) NSMutableArray *files;
+@property (nonatomic, retain) NSMutableArray *files;
 @property (nonatomic, retain) NSString *loaded;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) CGFloat percent;

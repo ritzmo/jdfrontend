@@ -38,8 +38,8 @@ static const char *kFileName = "file_name";
 static const NSUInteger kFileNameLength = 9;
 static const char *kFilePercent = "file_percent";
 static const NSUInteger kFilePercentLength = 12;
-static const char *kFileSize = "files_size";
-static const NSUInteger kFileSizeLength = 10;
+static const char *kFileSize = "file_size";
+static const NSUInteger kFileSizeLength = 9;
 static const char *kFileSpeed = "file_speed";
 static const NSUInteger kFileSpeedLength = 10;
 static const char *kFileStatus = "file_status";
@@ -143,7 +143,7 @@ static const NSUInteger kFileStatusLength = 11;
 			}
 			else if(!strncmp((const char*)attributes[i].localname, kFileSpeed, kFileSpeedLength))
 			{
-				file.speed = value;
+				file.speed = [value integerValue];
 			}
 			else if(!strncmp((const char*)attributes[i].localname, kFileStatus, kFileStatusLength))
 			{

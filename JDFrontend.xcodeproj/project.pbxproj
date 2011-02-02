@@ -15,6 +15,8 @@
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		DA597F6712F9C94A0073723A /* JDConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA597F6612F9C94A0073723A /* JDConnection.m */; };
 		DA597F9412F9CF480073723A /* PackageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA597F9312F9CF480073723A /* PackageTableViewCell.m */; };
+		DA597FE712FA06BC0073723A /* FileListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA597FE612FA06BC0073723A /* FileListController.m */; };
+		DA59803312FA0D640073723A /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA59803212FA0D640073723A /* FileTableViewCell.m */; };
 		DA5C27BF12F97679003436B1 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5C27BE12F97679003436B1 /* MainWindow-iPad.xib */; };
 		DA5C27CA12F9779B003436B1 /* NSDateFormatter+FuzzyFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C27C912F9779B003436B1 /* NSDateFormatter+FuzzyFormatting.m */; };
 		DA5C27DA12F97863003436B1 /* NSDate+RoughDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C27D912F97863003436B1 /* NSDate+RoughDistance.m */; };
@@ -48,6 +50,10 @@
 		DA597F6612F9C94A0073723A /* JDConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDConnection.m; sourceTree = "<group>"; };
 		DA597F9212F9CF480073723A /* PackageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageTableViewCell.h; sourceTree = "<group>"; };
 		DA597F9312F9CF480073723A /* PackageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageTableViewCell.m; sourceTree = "<group>"; };
+		DA597FE512FA06BC0073723A /* FileListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListController.h; sourceTree = "<group>"; };
+		DA597FE612FA06BC0073723A /* FileListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListController.m; sourceTree = "<group>"; };
+		DA59803112FA0D640073723A /* FileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTableViewCell.h; sourceTree = "<group>"; };
+		DA59803212FA0D640073723A /* FileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewCell.m; sourceTree = "<group>"; };
 		DA5C27BE12F97679003436B1 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		DA5C27C812F9779B003436B1 /* NSDateFormatter+FuzzyFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+FuzzyFormatting.h"; sourceTree = "<group>"; };
 		DA5C27C912F9779B003436B1 /* NSDateFormatter+FuzzyFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+FuzzyFormatting.m"; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 		DA8AF96C12F9A96600E574E7 /* ListController */ = {
 			isa = PBXGroup;
 			children = (
+				DA597FE512FA06BC0073723A /* FileListController.h */,
+				DA597FE612FA06BC0073723A /* FileListController.m */,
 				DA8AF97312F9AADE00E574E7 /* PackageListController.h */,
 				DA8AF97412F9AADE00E574E7 /* PackageListController.m */,
 				DA8AF97A12F9AB2100E574E7 /* ReloadableListController.h */,
@@ -254,6 +262,8 @@
 		DA8AF98212F9ABE900E574E7 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				DA59803112FA0D640073723A /* FileTableViewCell.h */,
+				DA59803212FA0D640073723A /* FileTableViewCell.m */,
 				DA597F9212F9CF480073723A /* PackageTableViewCell.h */,
 				DA597F9312F9CF480073723A /* PackageTableViewCell.m */,
 			);
@@ -361,6 +371,8 @@
 				DA8AF98012F9AB3B00E574E7 /* SwipeTableView.m in Sources */,
 				DA597F6712F9C94A0073723A /* JDConnection.m in Sources */,
 				DA597F9412F9CF480073723A /* PackageTableViewCell.m in Sources */,
+				DA597FE712FA06BC0073723A /* FileListController.m in Sources */,
+				DA59803312FA0D640073723A /* FileTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
