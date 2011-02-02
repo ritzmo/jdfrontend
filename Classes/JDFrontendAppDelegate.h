@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JDFrontendAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface JDFrontendAppDelegate : NSObject <UIApplicationDelegate>
+{
     UIWindow *window;
     UITabBarController *tabBarController;
 }
