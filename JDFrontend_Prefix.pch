@@ -1,0 +1,24 @@
+//
+// Prefix header for all source files of the 'JDFrontend' target in the 'JDFrontend' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+// SDK 3.2+
+#ifdef UI_USER_INTERFACE_IDIOM
+	#define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#else
+	#define IS_IPAD() (NO)
+#endif
+#define IS_IPHONE (!IS_IPAD())
+
+// lite/full
+#ifdef BUILD_JDFRONTEND_LITE
+	#define IS_LITE() (1)
+#else
+	#define IS_LITE() (0)
+#endif
+#define IS_FULL() (!IS_LITE())
