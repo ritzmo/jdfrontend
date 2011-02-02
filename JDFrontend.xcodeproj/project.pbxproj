@@ -21,6 +21,14 @@
 		DA5C281612F9945A003436B1 /* Package.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C281512F9945A003436B1 /* Package.m */; };
 		DA5C283812F99CF9003436B1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C283712F99CF9003436B1 /* File.m */; };
 		DA5C289212F9A18B003436B1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C289112F9A18B003436B1 /* libxml2.dylib */; };
+		DA8AF97012F9A9C800E574E7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF96F12F9A9C800E574E7 /* MainViewController.m */; };
+		DA8AF97512F9AADE00E574E7 /* PackageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97412F9AADE00E574E7 /* PackageListController.m */; };
+		DA8AF97912F9AB0E00E574E7 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97812F9AB0E00E574E7 /* EGORefreshTableHeaderView.m */; };
+		DA8AF97C12F9AB2100E574E7 /* ReloadableListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97B12F9AB2100E574E7 /* ReloadableListController.m */; };
+		DA8AF98012F9AB3B00E574E7 /* SwipeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97F12F9AB3B00E574E7 /* SwipeTableView.m */; };
+		DA8AF99912F9B05600E574E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8AF99812F9B05600E574E7 /* QuartzCore.framework */; };
+		DA8AFA1312F9B2E500E574E7 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */; };
+		DA8AFA1412F9B2E500E574E7 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +57,25 @@
 		DA5C283612F99CF9003436B1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		DA5C283712F99CF9003436B1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		DA5C289112F9A18B003436B1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		DA8AF96E12F9A9C800E574E7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		DA8AF96F12F9A9C800E574E7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		DA8AF97312F9AADE00E574E7 /* PackageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageListController.h; sourceTree = "<group>"; };
+		DA8AF97412F9AADE00E574E7 /* PackageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageListController.m; sourceTree = "<group>"; };
+		DA8AF97712F9AB0E00E574E7 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		DA8AF97812F9AB0E00E574E7 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		DA8AF97A12F9AB2100E574E7 /* ReloadableListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReloadableListController.h; sourceTree = "<group>"; };
+		DA8AF97B12F9AB2100E574E7 /* ReloadableListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReloadableListController.m; sourceTree = "<group>"; };
+		DA8AF97E12F9AB3B00E574E7 /* SwipeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeTableView.h; sourceTree = "<group>"; };
+		DA8AF97F12F9AB3B00E574E7 /* SwipeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeTableView.m; sourceTree = "<group>"; };
+		DA8AF99812F9B05600E574E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA8AFA0912F9B2E500E574E7 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		DA8AFA0A12F9B2E500E574E7 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		DA8AFA0D12F9B2E500E574E7 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		DA8AFA0E12F9B2E500E574E7 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		DA8AFA0F12F9B2E500E574E7 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		DA8AFA1012F9B2E500E574E7 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +87,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				DA5C289212F9A18B003436B1 /* libxml2.dylib in Frameworks */,
+				DA8AF99912F9B05600E574E7 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +99,12 @@
 			children = (
 				DA5C27C712F9779B003436B1 /* Categories */,
 				DA5C27D412F977AF003436B1 /* Delegates */,
+				DA8AF97612F9AB0E00E574E7 /* EGOTableViewPullRefresh */,
+				DA8AF96C12F9A96600E574E7 /* ListController */,
 				DA5C281312F9944C003436B1 /* Objects */,
+				DA8AF98212F9ABE900E574E7 /* TableViewCell */,
+				DA8AF97D12F9AB3B00E574E7 /* View */,
+				DA8AF96D12F9A98A00E574E7 /* ViewController */,
 				DA5C27E712F97D33003436B1 /* XmlReader */,
 			);
 			path = Classes;
@@ -88,6 +121,7 @@
 		29B97314FDCFA39411CA2CEA /* JDFrontend */ = {
 			isa = PBXGroup;
 			children = (
+				DA8AFA0712F9B2E500E574E7 /* Images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -123,6 +157,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				DA5C289112F9A18B003436B1 /* libxml2.dylib */,
+				DA8AF99812F9B05600E574E7 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,12 +197,80 @@
 		DA5C281312F9944C003436B1 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				DA5C281412F9945A003436B1 /* Package.h */,
-				DA5C281512F9945A003436B1 /* Package.m */,
 				DA5C283612F99CF9003436B1 /* File.h */,
 				DA5C283712F99CF9003436B1 /* File.m */,
+				DA5C281412F9945A003436B1 /* Package.h */,
+				DA5C281512F9945A003436B1 /* Package.m */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		DA8AF96C12F9A96600E574E7 /* ListController */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AF97312F9AADE00E574E7 /* PackageListController.h */,
+				DA8AF97412F9AADE00E574E7 /* PackageListController.m */,
+				DA8AF97A12F9AB2100E574E7 /* ReloadableListController.h */,
+				DA8AF97B12F9AB2100E574E7 /* ReloadableListController.m */,
+			);
+			path = ListController;
+			sourceTree = "<group>";
+		};
+		DA8AF96D12F9A98A00E574E7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AF96E12F9A9C800E574E7 /* MainViewController.h */,
+				DA8AF96F12F9A9C800E574E7 /* MainViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA8AF97612F9AB0E00E574E7 /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AF97712F9AB0E00E574E7 /* EGORefreshTableHeaderView.h */,
+				DA8AF97812F9AB0E00E574E7 /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGOTableViewPullRefresh;
+			sourceTree = "<group>";
+		};
+		DA8AF97D12F9AB3B00E574E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AF97E12F9AB3B00E574E7 /* SwipeTableView.h */,
+				DA8AF97F12F9AB3B00E574E7 /* SwipeTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA8AF98212F9ABE900E574E7 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		DA8AFA0712F9B2E500E574E7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AFA0812F9B2E500E574E7 /* EGOTableViewPullRefresh */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		DA8AFA0812F9B2E500E574E7 /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AFA0912F9B2E500E574E7 /* blackArrow.png */,
+				DA8AFA0A12F9B2E500E574E7 /* blackArrow@2x.png */,
+				DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */,
+				DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */,
+				DA8AFA0D12F9B2E500E574E7 /* grayArrow.png */,
+				DA8AFA0E12F9B2E500E574E7 /* grayArrow@2x.png */,
+				DA8AFA0F12F9B2E500E574E7 /* whiteArrow.png */,
+				DA8AFA1012F9B2E500E574E7 /* whiteArrow@2x.png */,
+			);
+			path = EGOTableViewPullRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +324,8 @@
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				DA5C27BF12F97679003436B1 /* MainWindow-iPad.xib in Resources */,
+				DA8AFA1312F9B2E500E574E7 /* blueArrow.png in Resources */,
+				DA8AFA1412F9B2E500E574E7 /* blueArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +344,11 @@
 				DA5C281212F9941F003436B1 /* PackagesXmlReader.m in Sources */,
 				DA5C281612F9945A003436B1 /* Package.m in Sources */,
 				DA5C283812F99CF9003436B1 /* File.m in Sources */,
+				DA8AF97012F9A9C800E574E7 /* MainViewController.m in Sources */,
+				DA8AF97512F9AADE00E574E7 /* PackageListController.m in Sources */,
+				DA8AF97912F9AB0E00E574E7 /* EGORefreshTableHeaderView.m in Sources */,
+				DA8AF97C12F9AB2100E574E7 /* ReloadableListController.m in Sources */,
+				DA8AF98012F9AB3B00E574E7 /* SwipeTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
