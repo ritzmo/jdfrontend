@@ -8,7 +8,12 @@
 
 #import "PackageListController.h"
 
-#import "PackagesXmlReader.h"
+#import "JDConnection.h"
+
+#import "Package.h"
+#import "PackageTableViewCell.h"
+
+#define kPackageCellHeight 65
 
 @implementation PackageListController
 
@@ -37,6 +42,7 @@
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	_tableView.sectionHeaderHeight = 0;
+	_tableView.rowHeight = kPackageCellHeight;
 }
 
 /* fetch packages */
@@ -44,9 +50,7 @@
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	_reloading = YES;
-	SaxXmlReader *xmlReader = [[PackagesXmlReader alloc] initWithDelegate:self];
-	//[xmlReader parseXMLFileAtURL:nil parseError:nil];
-	[xmlReader release];
+	[[JDConnection sharedInstance] getPackages:self];
 	[pool release];
 }
 
@@ -81,7 +85,11 @@
 /* cell for row */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = nil;
+	PackageTableViewCell *cell = nil;
+	cell = (PackageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPackageCell_ID];
+	if(cell == nil)
+		cell = [[PackageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPackageCell_ID];
+	cell.package = [packages objectAtIndex:indexPath.row];
 	return cell;
 }
 

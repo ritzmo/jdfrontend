@@ -15,6 +15,7 @@
 	NSInteger total;
 	NSMutableArray *files;
 	NSString *loaded;
+	NSString *name;
 	CGFloat percent;
 	NSString *size;
 	NSString *speed;
@@ -25,6 +26,7 @@
 @property (nonatomic, assign) NSInteger total;
 @property (nonatomic, assign) NSMutableArray *files;
 @property (nonatomic, retain) NSString *loaded;
+@property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) CGFloat percent;
 @property (nonatomic, retain) NSString *size;
 @property (nonatomic, retain) NSString *speed;

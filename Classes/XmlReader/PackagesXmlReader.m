@@ -18,6 +18,8 @@ static const char *kPackageLinksTotal = "package_linkstotal";
 static const NSUInteger kPackageLinksTotalLength = 18;
 static const char *kPackageLoaded = "package_loaded";
 static const NSUInteger kPackageLoadedLength = 14;
+static const char *kPackageName = "package_name";
+static const NSUInteger kPackageNameLength = 12;
 static const char *kPackagePercent = "package_percent";
 static const NSUInteger kPackagePercentLength = 15;
 static const char *kPackageSize = "package_size";
@@ -83,6 +85,10 @@ static const NSUInteger kFileStatusLength = 11;
 			else if(!strncmp((const char*)attributes[i].localname, kPackageLoaded, kPackageLoadedLength))
 			{
 				current.loaded = value;
+			}
+			else if(!strncmp((const char*)attributes[i].localname, kPackageName, kPackageNameLength))
+			{
+				current.name = value;
 			}
 			else if(!strncmp((const char*)attributes[i].localname, kPackagePercent, kPackagePercentLength))
 			{

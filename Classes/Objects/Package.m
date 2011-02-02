@@ -11,6 +11,6 @@
 
 @implementation Package
 
-@synthesize inProgress, total, files, loaded, percent, size, speed, todo;
+@synthesize inProgress, total, files, loaded, name, percent, size, speed, todo;
 
 @end
