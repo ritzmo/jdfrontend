@@ -13,7 +13,7 @@
 #import "FileListController.h"
 #import "PackageTableViewCell.h"
 
-#define kPackageCellHeight 65
+#define kPackageCellHeight 66
 
 @implementation PackageListController
 
@@ -122,6 +122,7 @@
 
 - (void)dataSourceDelegateFinishedParsingDocument:(SaxXmlReader *)dataSource
 {
+	NSIndexPath *indexPath = [_tableView indexPathForSelectedRow];
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:_tableView];
 	[_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
@@ -129,7 +130,16 @@
 	{
 		[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
 	}
-	if(IS_IPAD() && [_tableView indexPathForSelectedRow] == nil && [packages count])
+
+	// move selection back to visible area
+	if(indexPath)
+	{
+		NSArray *visibleRows = [_tableView indexPathsForVisibleRows];
+		if(![visibleRows containsObject:indexPath])
+			[_tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+	}
+	// select first row on ipad if nothing selected
+	else if(IS_IPAD() && [packages count])
 	{
 		[_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 		fileListController.package = [packages objectAtIndex:0];
