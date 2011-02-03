@@ -81,8 +81,9 @@ typedef struct
  
  @param URL URL to download.
  @param error Will be pointed to NSError if one occurs.
+ @return YES if error occured.
  */
-- (void)parseXMLFileAtURL: (NSURL *)URL parseError: (NSError **)error;
+- (BOOL)parseXMLFileAtURL: (NSURL *)URL parseError: (NSError **)error;
 
 /*!
  @brief Currently received string.

@@ -164,7 +164,7 @@
 	PackageTableViewCell *cell = nil;
 	cell = (PackageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPackageCell_ID];
 	if(cell == nil)
-		cell = [[PackageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPackageCell_ID];
+		cell = [[[PackageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPackageCell_ID] autorelease];
 	cell.package = [packages objectAtIndex:indexPath.row];
 	return cell;
 }

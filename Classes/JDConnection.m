@@ -109,6 +109,7 @@ static NSMutableArray *connections = nil;
 	SaxXmlReader *xmlReader = [[PackagesXmlReader alloc] initWithDelegate:delegate];
 	[xmlReader parseXMLFileAtURL:myURI parseError:nil];
 	[xmlReader release];
+	[myURI release];
 }
 
 @end

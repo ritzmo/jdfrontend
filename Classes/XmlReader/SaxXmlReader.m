@@ -53,7 +53,7 @@ static xmlSAXHandler libxmlSAXHandlerStruct;
 	[super dealloc];
 }
 
-- (void)parseXMLFileAtURL: (NSURL *)URL parseError: (NSError **)error
+- (BOOL)parseXMLFileAtURL: (NSURL *)URL parseError: (NSError **)error
 {
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL
 												  cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -107,6 +107,8 @@ static xmlSAXHandler libxmlSAXHandlerStruct;
 
 	[request release];
 	[con release];
+
+	return (failureReason != nil);
 }
 
 #pragma mark -
