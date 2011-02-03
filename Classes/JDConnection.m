@@ -11,6 +11,8 @@
 #import "PackagesXmlReader.h"
 
 static JDConnection *this = nil;
+static NSMutableArray *connections = nil;
+#define configPath @"~/Library/Preferences/de.ritzMo.JDFrontend.Connections.plist"
 
 @interface JDConnection()
 @property (nonatomic, retain) NSURL *baseURL;
@@ -19,6 +21,56 @@ static JDConnection *this = nil;
 @implementation JDConnection
 
 @synthesize baseURL;
+
++ (BOOL)connectTo:(NSUInteger)idx
+{
+	if(!this || !connections || idx >= [connections count])
+		return NO;
+
+	NSString *newURL = [connections objectAtIndex:idx];
+	if([newURL rangeOfString:@"http"].location == 0)
+	{
+		// ":" after http(s):
+		if([newURL rangeOfString:@":" options:NSBackwardsSearch].location > 5)
+			this.baseURL = [NSURL URLWithString:newURL];
+		else
+			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@:10025", newURL]];
+	}
+	else
+	{
+		// ":" in url
+		if([newURL rangeOfString:@":" options:NSBackwardsSearch].location > 0)
+			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", newURL]];
+		else
+			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:10025", newURL]];
+	}
+	return YES;
+}
+
++ (BOOL)loadConnections
+{
+	NSString *finalPath = [configPath stringByExpandingTildeInPath];
+    BOOL retVal = YES;
+
+    if(connections)
+    {
+        [connections release];
+    }
+    connections = [[NSMutableArray arrayWithContentsOfFile:finalPath] retain];
+
+    if(connections == nil)
+    {
+        connections = [[NSMutableArray alloc] init];
+        retVal = NO;
+    }
+    return retVal;
+}
+
++ (void)saveConnections
+{
+	NSString *finalPath = [configPath stringByExpandingTildeInPath];
+    [connections writeToFile:finalPath atomically:YES];
+}
 
 + (JDConnection *)sharedInstance
 {
@@ -40,8 +92,13 @@ static JDConnection *this = nil;
 {
 	if(baseURL == nil)
 	{
-		// TODO: force connect
-		baseURL = [[NSURL alloc] initWithString:@"http://moritz-venns-macbook-pro:10025"];
+		// TODO: implement selecting default connection
+		if(![JDConnection connectTo:0])
+		{
+			// TODO: yield warning
+			// FIXME: until this is properly implemented, hardcode my laptop
+			baseURL = [[NSURL alloc] initWithString:@"http://moritz-venns-macbook-pro:10025"];
+		}
 	}
 	return baseURL;
 }

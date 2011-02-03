@@ -15,6 +15,8 @@
 	NSURL *baseURL;
 }
 
++ (BOOL)loadConnections;
++ (void)saveConnections;
 + (JDConnection *)sharedInstance;
 
 - (void)getPackages:(NSObject<DataSourceDelegate> *)delegate;
