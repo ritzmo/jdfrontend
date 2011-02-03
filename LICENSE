@@ -1,0 +1,22 @@
+All Files of this Software are licensed under the Creative Commons 
+Attribution-NonCommercial-ShareAlike 3.0 Unported 
+License if not stated otherwise in a Files Head or in the list below.
+To view a copy of this license, visit
+http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to
+Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+Alternatively, this software may be distributed commercially by the original
+Author.
+
+This software is NOT free software. It is open source, you are allowed to
+modify it (if you keep the license), but it may not be commercially 
+distributed other than under the conditions noted above.
+
+
+Any file below the Classes/EGOTableViewPullRefresh and
+Images/EGOTableViewPullRefresh folders is part of enormego's "Pull to Refresh"
+UI extension and licensed under the MIT license.
+
+Any file below the Classes/MGSplitViewController folder is part of
+Matt Legend Gemmell's MGSplitViewController class and distributed
+according to it's license as found in the corresponding folder.
