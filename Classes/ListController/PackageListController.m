@@ -63,8 +63,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
 	if(IS_IPHONE())
 		[_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
+	if(![packages count] && !_reloading)
+		[self reloadData];
 }
 
 - (Package *)packageForPackageName:(NSString *)name
@@ -126,9 +129,10 @@
 	{
 		[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
 	}
-	if(IS_IPAD() && [_tableView indexPathForSelectedRow] == nil)
+	if(IS_IPAD() && [_tableView indexPathForSelectedRow] == nil && [packages count])
 	{
 		[_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+		fileListController.package = [packages objectAtIndex:0];
 	}
 }
 

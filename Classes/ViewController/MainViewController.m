@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 
 #import "PackageListController.h"
+#import "PackageSplitViewController.h"
 
 @implementation MainViewController
 
@@ -16,12 +17,22 @@
 {
 	self.delegate = self;
 
-	UIViewController *packageListController = [[PackageListController alloc] init];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:packageListController];
-	self.viewControllers = [NSArray arrayWithObject:navController];
+	if(IS_IPAD())
+	{
+		UIViewController *packageListController = [[PackageSplitViewController alloc] init];
+		self.viewControllers = [NSArray arrayWithObject:packageListController];
+		[packageListController release];
+	}
+	else
+	{
+		UIViewController *packageListController = [[PackageListController alloc] init];
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:packageListController];
+		self.viewControllers = [NSArray arrayWithObject:navController];
 
-	[navController release];
-	[packageListController release];
+		[navController release];
+		[packageListController release];
+	}
+	self.selectedIndex = 0;
 }
 
 #pragma mark UIViewController delegates

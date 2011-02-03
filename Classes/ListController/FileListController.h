@@ -9,18 +9,21 @@
 #import <Foundation/Foundation.h>
 
 #import "DataSourceDelegate.h"
+#import "MGSplitViewController.h" /* MGSplitViewControllerDelegate */
 #import "ReloadableListController.h"
 
 @class Package;
 @class PackageListController;
 
 @interface FileListController : ReloadableListController <UITableViewDelegate,
-															UITableViewDataSource,
-															DataSourceDelegate>
+														UITableViewDataSource,
+														DataSourceDelegate,
+														MGSplitViewControllerDelegate>
 {
 @private
 	Package *package;
 	PackageListController *packageListController;
+	UIPopoverController *popoverController;
 }
 
 @property (nonatomic, retain) Package *package;
