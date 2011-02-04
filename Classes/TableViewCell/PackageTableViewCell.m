@@ -65,11 +65,15 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 	}
 	else if(package.inProgress)
 	{
-		detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"[%d/%d] %@ @ %@", @""), package.inProgress, package.total, package.size, package.speed];
+		// just to make sure
+		if(package.eta)
+			detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"[%d/%d] %@, ETA %@ @ %@", @""), package.inProgress, package.total, package.size, package.eta, package.speed];
+		else
+			detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"[%d/%d] %@ @ %@", @""), package.inProgress, package.total, package.size, package.speed];
 	}
 	else
 	{
-		detailsLabel.text = [NSString stringWithFormat:@"[0/%d]", package.total];
+		detailsLabel.text = [NSString stringWithFormat:@"[0/%d] %@", package.total, package.size];
 	}
 
 	[self setNeedsLayout];

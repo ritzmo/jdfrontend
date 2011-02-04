@@ -11,6 +11,7 @@
 
 @interface Package : NSObject {
 @private
+	NSString *eta;
 	NSInteger inProgress;
 	NSInteger total;
 	NSMutableArray *files;
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic, readonly) BOOL finished;
+@property (nonatomic, retain) NSString *eta;
 @property (nonatomic, assign) NSInteger inProgress;
 @property (nonatomic, assign) NSInteger total;
 @property (nonatomic, retain) NSMutableArray *files;

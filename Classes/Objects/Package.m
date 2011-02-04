@@ -11,11 +11,20 @@
 
 @implementation Package
 
-@synthesize inProgress, total, files, loaded, name, percent, size, speed, todo;
+@synthesize eta, inProgress, total, files, loaded, name, percent, size, speed, todo;
 
 - (BOOL)finished
 {
 	return (percent >= 100);
+}
+
+- (void)setEta:(NSString *)new
+{
+	if(eta == new) return;
+
+	[eta release];
+	if([new isEqualToString:@"~"]) eta = nil;
+	else eta = [new retain];
 }
 
 @end

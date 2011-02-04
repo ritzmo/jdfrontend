@@ -12,6 +12,8 @@
 
 static const char *kPackageElement = "packages";
 static const NSUInteger kPackageElementLength = 8;
+static const char *kPackageETA = "package_ETA";
+static const NSUInteger kPackageETALength = 11;
 static const char *kPackageInProgress = "package_linksinprogress";
 static const NSUInteger kPackageInProgressLength = 23;
 static const char *kPackageLinksTotal = "package_linkstotal";
@@ -76,6 +78,10 @@ static const NSUInteger kFileStatusLength = 11;
 			if(!strncmp((const char*)attributes[i].localname, kPackageInProgress, kPackageInProgressLength))
 			{
 				current.inProgress = [value integerValue];
+			}
+			else if(!strncmp((const char*)attributes[i].localname, kPackageETA, kPackageETALength))
+			{
+				current.eta = value;
 			}
 			else if(!strncmp((const char*)attributes[i].localname, kPackageLinksTotal, kPackageLinksTotalLength))
 			{

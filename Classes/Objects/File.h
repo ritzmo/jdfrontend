@@ -24,6 +24,7 @@
 - (NSString *)humanReadableSpeed;
 
 @property (nonatomic, readonly) BOOL finished;
+@property (nonatomic, readonly) UIColor *detailsColor;
 @property (nonatomic, retain) NSString *downloaded;
 @property (nonatomic, retain) NSString *hoster;
 @property (nonatomic, retain) NSString *name;

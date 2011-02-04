@@ -59,7 +59,15 @@ NSString *kFileCell_ID = @"FileCell_ID";
 	nameLabel.text = file.name;
 	progress.progress = file.percent/100.0f;
 
-	if(file.percent >= 100 || !file.speed)
+	detailsLabel.textColor = file.detailsColor;
+	if(file.status)
+	{
+		if(IS_IPAD() && file.percent > 0 && file.percent < 100)
+			detailsLabel.text = [NSString stringWithFormat:@"%.2f%% of %@, %@", file.percent, file.size, file.status];
+		else
+			detailsLabel.text = file.status;
+	}
+	else if(file.percent >= 100 || !file.speed)
 	{
 		detailsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%.2f%% of %@", @""), file.percent, file.size];
 	}
