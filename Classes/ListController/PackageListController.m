@@ -120,16 +120,17 @@
 #pragma mark DataSourceDelegate methods
 #pragma mark -
 
+- (void)dataSourceDelegate:(SaxXmlReader *)dataSource errorParsingDocument:(NSError *)error
+{
+	[super dataSourceDelegate:dataSource errorParsingDocument:error];
+	[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
+}
+
 - (void)dataSourceDelegateFinishedParsingDocument:(SaxXmlReader *)dataSource
 {
 	NSIndexPath *indexPath = [_tableView indexPathForSelectedRow];
-	_reloading = NO;
-	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:_tableView];
-	[_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-	if(fileListController)
-	{
-		[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
-	}
+	[super dataSourceDelegateFinishedParsingDocument:dataSource];
+	[fileListController dataSourceDelegateFinishedParsingDocument:dataSource];
 
 	// move selection back to visible area
 	if(indexPath)
