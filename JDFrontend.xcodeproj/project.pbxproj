@@ -17,7 +17,6 @@
 		DA33F48D12FB34C30095CF11 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5C27BE12F97679003436B1 /* MainWindow-iPad.xib */; };
 		DA33F48E12FB34C30095CF11 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */; };
 		DA33F48F12FB34C30095CF11 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */; };
-		DA33F49012FB34C30095CF11 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DAF0635612FADE5500507F2E /* LICENSE */; };
 		DA33F49212FB34C30095CF11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		DA33F49312FB34C30095CF11 /* JDFrontendAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* JDFrontendAppDelegate.m */; };
 		DA33F49412FB34C30095CF11 /* NSDateFormatter+FuzzyFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C27C912F9779B003436B1 /* NSDateFormatter+FuzzyFormatting.m */; };
@@ -64,7 +63,6 @@
 		DA8AF99912F9B05600E574E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8AF99812F9B05600E574E7 /* QuartzCore.framework */; };
 		DA8AFA1312F9B2E500E574E7 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */; };
 		DA8AFA1412F9B2E500E574E7 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */; };
-		DAF0635D12FADE5500507F2E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DAF0635612FADE5500507F2E /* LICENSE */; };
 		DAF0635E12FADE5500507F2E /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635812FADE5500507F2E /* MGSplitCornersView.m */; };
 		DAF0635F12FADE5500507F2E /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635A12FADE5500507F2E /* MGSplitDividerView.m */; };
 		DAF0636012FADE5500507F2E /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635C12FADE5500507F2E /* MGSplitViewController.m */; };
@@ -448,7 +446,6 @@
 				DA5C27BF12F97679003436B1 /* MainWindow-iPad.xib in Resources */,
 				DA8AFA1312F9B2E500E574E7 /* blueArrow.png in Resources */,
 				DA8AFA1412F9B2E500E574E7 /* blueArrow@2x.png in Resources */,
-				DAF0635D12FADE5500507F2E /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +457,6 @@
 				DA33F48D12FB34C30095CF11 /* MainWindow-iPad.xib in Resources */,
 				DA33F48E12FB34C30095CF11 /* blueArrow.png in Resources */,
 				DA33F48F12FB34C30095CF11 /* blueArrow@2x.png in Resources */,
-				DA33F49012FB34C30095CF11 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
