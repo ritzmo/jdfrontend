@@ -24,6 +24,7 @@
 }
 
 @property (nonatomic, readonly) BOOL finished;
+@property (nonatomic, readonly) UIColor *detailsColor;
 @property (nonatomic, retain) NSString *eta;
 @property (nonatomic, assign) NSInteger inProgress;
 @property (nonatomic, assign) NSInteger total;

@@ -59,6 +59,7 @@ NSString *kPackageCell_ID = @"PackageCell_ID";
 	nameLabel.text = package.name;
 	progress.progress = package.percent/100.0f;
 
+	detailsLabel.textColor = package.detailsColor;
 	if(package.finished)
 	{
 		detailsLabel.text = NSLocalizedString(@"completed", @"");

@@ -55,6 +55,8 @@
 		DA5C281612F9945A003436B1 /* Package.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C281512F9945A003436B1 /* Package.m */; };
 		DA5C283812F99CF9003436B1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C283712F99CF9003436B1 /* File.m */; };
 		DA5C289212F9A18B003436B1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C289112F9A18B003436B1 /* libxml2.dylib */; };
+		DA69946012FF57EB00397A96 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69945F12FF57EB00397A96 /* Constants.m */; };
+		DA69946112FF57EB00397A96 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69945F12FF57EB00397A96 /* Constants.m */; };
 		DA8AF97012F9A9C800E574E7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF96F12F9A9C800E574E7 /* MainViewController.m */; };
 		DA8AF97512F9AADE00E574E7 /* PackageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97412F9AADE00E574E7 /* PackageListController.m */; };
 		DA8AF97912F9AB0E00E574E7 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF97812F9AB0E00E574E7 /* EGORefreshTableHeaderView.m */; };
@@ -104,6 +106,8 @@
 		DA5C283612F99CF9003436B1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		DA5C283712F99CF9003436B1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		DA5C289112F9A18B003436B1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		DA69945E12FF57EB00397A96 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DA69945F12FF57EB00397A96 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		DA8AF96E12F9A9C800E574E7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		DA8AF96F12F9A9C800E574E7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		DA8AF97312F9AADE00E574E7 /* PackageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageListController.h; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				DA5C27E712F97D33003436B1 /* XmlReader */,
 				DA597F6512F9C94A0073723A /* JDConnection.h */,
 				DA597F6612F9C94A0073723A /* JDConnection.m */,
+				DA69945E12FF57EB00397A96 /* Constants.h */,
+				DA69945F12FF57EB00397A96 /* Constants.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				DAF0635F12FADE5500507F2E /* MGSplitDividerView.m in Sources */,
 				DAF0636012FADE5500507F2E /* MGSplitViewController.m in Sources */,
 				DAF0636412FADE8000507F2E /* PackageSplitViewController.m in Sources */,
+				DA69946012FF57EB00397A96 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +523,7 @@
 				DA33F4A412FB34C30095CF11 /* MGSplitDividerView.m in Sources */,
 				DA33F4A512FB34C30095CF11 /* MGSplitViewController.m in Sources */,
 				DA33F4A612FB34C30095CF11 /* PackageSplitViewController.m in Sources */,
+				DA69946112FF57EB00397A96 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

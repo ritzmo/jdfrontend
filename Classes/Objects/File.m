@@ -8,6 +8,7 @@
 
 #import "File.h"
 
+#import "Constants.h"
 
 @implementation File
 
@@ -23,19 +24,19 @@
 	// got status text
 	if(status)
 	{
-		// File already exists, File loaded from <another hoster>
+		// File already exists, File loaded from <another hoster>, ...
 		if([status rangeOfString:@"File "].location == 0)
-			return [UIColor grayColor];
-		// > CRC OK (<algorithm>)
-		else if([status rangeOfString:@"CRC OK"].location != NSNotFound)
-			return [UIColor colorWithRed:0 green:0.8f blue:0 alpha:1.0f];
-		// > CRC failed (<algorithm>)
-		else if([status rangeOfString:@"CRC failed"].location != NSNotFound)
-			return [UIColor redColor];
+			return kInformationColor;
+		// > {Extract,CRC} OK (<algorithm>)
+		else if([status rangeOfString:@" OK"].location != NSNotFound)
+			return kSuccessColor;
+		// > {Extract,CRC} failed (<algorithm>)
+		else if([status rangeOfString:@" failed"].location != NSNotFound)
+			return kFailureColor;
 	}
 	// completed file
 	else if(percent >= 100)
-		return [UIColor colorWithRed:0 green:0.8f blue:0 alpha:1.0f];
+		return kSuccessColor;
 	// default
 	return [UIColor blackColor];
 }

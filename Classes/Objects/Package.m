@@ -8,6 +8,7 @@
 
 #import "Package.h"
 
+#import "Constants.h"
 
 @implementation Package
 
@@ -16,6 +17,13 @@
 - (BOOL)finished
 {
 	return (percent >= 100);
+}
+
+- (UIColor *)detailsColor
+{
+	if(self.finished)
+		return kSuccessColor;
+	return [UIColor blackColor];
 }
 
 - (void)setEta:(NSString *)new
