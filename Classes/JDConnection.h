@@ -15,6 +15,7 @@
 	NSURL *baseURL;
 }
 
++ (BOOL)connectTo:(NSUInteger)idx;
 + (BOOL)loadConnections;
 + (void)saveConnections;
 + (JDConnection *)sharedInstance;
