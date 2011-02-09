@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		DA24967B1302E6EF00393338 /* ConfigListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24967A1302E6EF00393338 /* ConfigListController.m */; };
+		DA24967C1302E6EF00393338 /* ConfigListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24967A1302E6EF00393338 /* ConfigListController.m */; };
 		DA33F48C12FB34C30095CF11 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		DA33F48D12FB34C30095CF11 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5C27BE12F97679003436B1 /* MainWindow-iPad.xib */; };
 		DA33F48E12FB34C30095CF11 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */; };
@@ -82,6 +84,8 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* JDFrontend-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JDFrontend-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DA2496791302E6EF00393338 /* ConfigListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigListController.h; sourceTree = "<group>"; };
+		DA24967A1302E6EF00393338 /* ConfigListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigListController.m; sourceTree = "<group>"; };
 		DA33F4B012FB34C30095CF11 /* JDFrontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDFrontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA597F6512F9C94A0073723A /* JDConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDConnection.h; sourceTree = "<group>"; };
 		DA597F6612F9C94A0073723A /* JDConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDConnection.m; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		DA8AF96C12F9A96600E574E7 /* ListController */ = {
 			isa = PBXGroup;
 			children = (
+				DA2496791302E6EF00393338 /* ConfigListController.h */,
+				DA24967A1302E6EF00393338 /* ConfigListController.m */,
 				DA597FE512FA06BC0073723A /* FileListController.h */,
 				DA597FE612FA06BC0073723A /* FileListController.m */,
 				DA8AF97312F9AADE00E574E7 /* PackageListController.h */,
@@ -495,6 +501,7 @@
 				DAF0636012FADE5500507F2E /* MGSplitViewController.m in Sources */,
 				DAF0636412FADE8000507F2E /* PackageSplitViewController.m in Sources */,
 				DA69946012FF57EB00397A96 /* Constants.m in Sources */,
+				DA24967B1302E6EF00393338 /* ConfigListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +531,7 @@
 				DA33F4A512FB34C30095CF11 /* MGSplitViewController.m in Sources */,
 				DA33F4A612FB34C30095CF11 /* PackageSplitViewController.m in Sources */,
 				DA69946112FF57EB00397A96 /* Constants.m in Sources */,
+				DA24967C1302E6EF00393338 /* ConfigListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

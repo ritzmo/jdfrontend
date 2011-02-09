@@ -13,9 +13,13 @@
 @interface JDConnection : NSObject {
 @private
 	NSURL *baseURL;
+	NSString *currentString;
 }
 
 + (BOOL)connectTo:(NSUInteger)idx;
++ (void)disconnect;
++ (NSInteger)getConnectedId;
++ (NSMutableArray *)getConnections;
 + (BOOL)loadConnections;
 + (void)saveConnections;
 + (JDConnection *)sharedInstance;

@@ -8,6 +8,7 @@
 
 #import "JDConnection.h"
 
+#import "Constants.h"
 #import "PackagesXmlReader.h"
 
 static JDConnection *this = nil;
@@ -16,11 +17,12 @@ static NSMutableArray *connections = nil;
 
 @interface JDConnection()
 @property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic, retain) NSString *currentString;
 @end
 
 @implementation JDConnection
 
-@synthesize baseURL;
+@synthesize baseURL, currentString;
 
 + (BOOL)connectTo:(NSUInteger)idx
 {
@@ -28,6 +30,7 @@ static NSMutableArray *connections = nil;
 		return NO;
 
 	NSString *newURL = [connections objectAtIndex:idx];
+	this.currentString = newURL;
 	if([newURL rangeOfString:@"http"].location == 0)
 	{
 		// ":" after http(s):
@@ -45,6 +48,27 @@ static NSMutableArray *connections = nil;
 			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:10025", newURL]];
 	}
 	return YES;
+}
+
++ (void)disconnect
+{
+	this.baseURL = nil;
+}
+
++ (NSInteger)getConnectedId
+{
+	const NSUInteger index = [connections indexOfObject: this.currentString];
+	if(index == NSNotFound)
+		return [[NSUserDefaults standardUserDefaults]
+				integerForKey: kActiveConnection];
+	return index;
+}
+
++ (NSMutableArray *)getConnections
+{
+	if(connections == nil)
+		[JDConnection loadConnections];
+	return connections;
 }
 
 + (BOOL)loadConnections
@@ -82,6 +106,7 @@ static NSMutableArray *connections = nil;
 - (void)dealloc
 {
 	[baseURL release];
+	[currentString release];
 	[this release];
 	this = nil;
 
