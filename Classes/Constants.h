@@ -13,6 +13,10 @@
 #define kBottomMargin           5
 #define kTweenMargin            10
 
+// table view cell content offsets
+#define kCellLeftOffset			8
+#define kCellTopOffset			12
+
 // control dimensions
 #define kStdButtonWidth         106
 #define kStdButtonHeight        40

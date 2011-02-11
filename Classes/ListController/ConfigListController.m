@@ -11,7 +11,7 @@
 #import "JDConnection.h"
 #import "Constants.h"
 
-//#import "ConfigViewController.h"
+#import "ConfigViewController.h"
 
 @implementation ConfigListController
 
@@ -99,8 +99,8 @@
 	}
 
 	// Open ConfigViewController for selected item
-	//UIViewController *targetViewController = [ConfigViewController withConnection: [connections objectAtIndex: indexPath.row]: indexPath.row];
-	//[self.navigationController pushViewController: targetViewController animated: YES];
+	UIViewController *targetViewController = [ConfigViewController withHost: [connections objectAtIndex:indexPath.row]: indexPath.row];
+	[self.navigationController pushViewController:targetViewController animated:YES];
 
 	return indexPath;
 }
@@ -257,9 +257,9 @@
 	// Add new connection
 	else if(editingStyle == UITableViewCellEditingStyleInsert)
 	{
-		//UIViewController *targetViewController = [ConfigViewController newConnection];
-		//[self.navigationController pushViewController: targetViewController animated: YES];
-		//[targetViewController release];
+		UIViewController *targetViewController = [ConfigViewController newConnection];
+		[self.navigationController pushViewController: targetViewController animated: YES];
+		[targetViewController release];
 	}
 }
 

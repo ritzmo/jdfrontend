@@ -10,7 +10,7 @@
 		1D3623260D0F684500981E51 /* JDFrontendAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* JDFrontendAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		DA24967B1302E6EF00393338 /* ConfigListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24967A1302E6EF00393338 /* ConfigListController.m */; };
@@ -41,7 +41,7 @@
 		DA33F4A512FB34C30095CF11 /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635C12FADE5500507F2E /* MGSplitViewController.m */; };
 		DA33F4A612FB34C30095CF11 /* PackageSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0636312FADE8000507F2E /* PackageSplitViewController.m */; };
 		DA33F4A812FB34C30095CF11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		DA33F4A912FB34C30095CF11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		DA33F4A912FB34C30095CF11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA33F4AA12FB34C30095CF11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		DA33F4AB12FB34C30095CF11 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C289112F9A18B003436B1 /* libxml2.dylib */; };
 		DA33F4AC12FB34C30095CF11 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8AF99812F9B05600E574E7 /* QuartzCore.framework */; };
@@ -67,6 +67,14 @@
 		DA8AF99912F9B05600E574E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8AF99812F9B05600E574E7 /* QuartzCore.framework */; };
 		DA8AFA1312F9B2E500E574E7 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0B12F9B2E500E574E7 /* blueArrow.png */; };
 		DA8AFA1412F9B2E500E574E7 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8AFA0C12F9B2E500E574E7 /* blueArrow@2x.png */; };
+		DADDC3F9130566990066A271 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC3F8130566990066A271 /* ConfigViewController.m */; };
+		DADDC3FA130566990066A271 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC3F8130566990066A271 /* ConfigViewController.m */; };
+		DADDC40F13056A350066A271 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40A13056A350066A271 /* CellTextField.m */; };
+		DADDC41013056A350066A271 /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40C13056A350066A271 /* DisplayCell.m */; };
+		DADDC41113056A350066A271 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40E13056A350066A271 /* EditableTableViewCell.m */; };
+		DADDC41213056A350066A271 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40A13056A350066A271 /* CellTextField.m */; };
+		DADDC41313056A350066A271 /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40C13056A350066A271 /* DisplayCell.m */; };
+		DADDC41413056A350066A271 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40E13056A350066A271 /* EditableTableViewCell.m */; };
 		DAF0635E12FADE5500507F2E /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635812FADE5500507F2E /* MGSplitCornersView.m */; };
 		DAF0635F12FADE5500507F2E /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635A12FADE5500507F2E /* MGSplitDividerView.m */; };
 		DAF0636012FADE5500507F2E /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635C12FADE5500507F2E /* MGSplitViewController.m */; };
@@ -131,6 +139,14 @@
 		DA8AFA0E12F9B2E500E574E7 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		DA8AFA0F12F9B2E500E574E7 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		DA8AFA1012F9B2E500E574E7 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		DADDC3F7130566990066A271 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		DADDC3F8130566990066A271 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		DADDC40913056A350066A271 /* CellTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextField.h; sourceTree = "<group>"; };
+		DADDC40A13056A350066A271 /* CellTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextField.m; sourceTree = "<group>"; };
+		DADDC40B13056A350066A271 /* DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayCell.h; sourceTree = "<group>"; };
+		DADDC40C13056A350066A271 /* DisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayCell.m; sourceTree = "<group>"; };
+		DADDC40D13056A350066A271 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
+		DADDC40E13056A350066A271 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		DAF0635612FADE5500507F2E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DAF0635712FADE5500507F2E /* MGSplitCornersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSplitCornersView.h; sourceTree = "<group>"; };
 		DAF0635812FADE5500507F2E /* MGSplitCornersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitCornersView.m; sourceTree = "<group>"; };
@@ -184,10 +200,10 @@
 				DA8AF97D12F9AB3B00E574E7 /* View */,
 				DA8AF96D12F9A98A00E574E7 /* ViewController */,
 				DA5C27E712F97D33003436B1 /* XmlReader */,
-				DA597F6512F9C94A0073723A /* JDConnection.h */,
-				DA597F6612F9C94A0073723A /* JDConnection.m */,
 				DA69945E12FF57EB00397A96 /* Constants.h */,
 				DA69945F12FF57EB00397A96 /* Constants.m */,
+				DA597F6512F9C94A0073723A /* JDConnection.h */,
+				DA597F6612F9C94A0073723A /* JDConnection.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,6 +322,8 @@
 		DA8AF96D12F9A98A00E574E7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DADDC3F7130566990066A271 /* ConfigViewController.h */,
+				DADDC3F8130566990066A271 /* ConfigViewController.m */,
 				DA8AF96E12F9A9C800E574E7 /* MainViewController.h */,
 				DA8AF96F12F9A9C800E574E7 /* MainViewController.m */,
 			);
@@ -333,6 +351,12 @@
 		DA8AF98212F9ABE900E574E7 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				DADDC40913056A350066A271 /* CellTextField.h */,
+				DADDC40A13056A350066A271 /* CellTextField.m */,
+				DADDC40B13056A350066A271 /* DisplayCell.h */,
+				DADDC40C13056A350066A271 /* DisplayCell.m */,
+				DADDC40D13056A350066A271 /* EditableTableViewCell.h */,
+				DADDC40E13056A350066A271 /* EditableTableViewCell.m */,
 				DA59803112FA0D640073723A /* FileTableViewCell.h */,
 				DA59803212FA0D640073723A /* FileTableViewCell.m */,
 				DA597F9212F9CF480073723A /* PackageTableViewCell.h */,
@@ -502,6 +526,10 @@
 				DAF0636412FADE8000507F2E /* PackageSplitViewController.m in Sources */,
 				DA69946012FF57EB00397A96 /* Constants.m in Sources */,
 				DA24967B1302E6EF00393338 /* ConfigListController.m in Sources */,
+				DADDC3F9130566990066A271 /* ConfigViewController.m in Sources */,
+				DADDC40F13056A350066A271 /* CellTextField.m in Sources */,
+				DADDC41013056A350066A271 /* DisplayCell.m in Sources */,
+				DADDC41113056A350066A271 /* EditableTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +560,10 @@
 				DA33F4A612FB34C30095CF11 /* PackageSplitViewController.m in Sources */,
 				DA69946112FF57EB00397A96 /* Constants.m in Sources */,
 				DA24967C1302E6EF00393338 /* ConfigListController.m in Sources */,
+				DADDC3FA130566990066A271 /* ConfigViewController.m in Sources */,
+				DADDC41213056A350066A271 /* CellTextField.m in Sources */,
+				DADDC41313056A350066A271 /* DisplayCell.m in Sources */,
+				DADDC41413056A350066A271 /* EditableTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

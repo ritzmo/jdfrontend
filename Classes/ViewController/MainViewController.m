@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 
+#import "ConfigListController.h"
 #import "PackageListController.h"
 #import "PackageSplitViewController.h"
 
@@ -16,22 +17,26 @@
 - (void)awakeFromNib
 {
 	self.delegate = self;
+	UIViewController *packageListController = nil;
 
 	if(IS_IPAD())
 	{
-		UIViewController *packageListController = [[PackageSplitViewController alloc] init];
-		self.viewControllers = [NSArray arrayWithObject:packageListController];
-		[packageListController release];
+		packageListController = [[PackageSplitViewController alloc] init];
 	}
 	else
 	{
-		UIViewController *packageListController = [[PackageListController alloc] init];
-		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:packageListController];
-		self.viewControllers = [NSArray arrayWithObject:navController];
-
-		[navController release];
-		[packageListController release];
+		UIViewController *actualPackageListController = [[PackageListController alloc] init];
+		packageListController = [[UINavigationController alloc] initWithRootViewController:actualPackageListController];
+		[actualPackageListController release];
 	}
+	UIViewController *configListController = [[ConfigListController alloc] init];
+	UIViewController *configNavController = [[UINavigationController alloc] initWithRootViewController:configListController];
+
+	self.viewControllers = [NSArray arrayWithObjects:packageListController, configNavController, nil];
+
+	[configListController release];
+	[configNavController release];
+	[packageListController release];
 	self.selectedIndex = 0;
 }
 

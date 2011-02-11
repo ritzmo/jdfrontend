@@ -42,7 +42,7 @@ static NSMutableArray *connections = nil;
 	else
 	{
 		// ":" in url
-		if([newURL rangeOfString:@":" options:NSBackwardsSearch].location > 0)
+		if([newURL rangeOfString:@":" options:NSBackwardsSearch].location != NSNotFound)
 			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", newURL]];
 		else
 			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:10025", newURL]];
@@ -117,12 +117,15 @@ static NSMutableArray *connections = nil;
 {
 	if(baseURL == nil)
 	{
-		// TODO: implement selecting default connection
-		if(![JDConnection connectTo:0])
+		@synchronized(self)
 		{
-			// TODO: yield warning
-			// FIXME: until this is properly implemented, hardcode my laptop
-			baseURL = [[NSURL alloc] initWithString:@"http://moritz-venns-macbook-pro:10025"];
+			if(baseURL == nil)
+			{
+				if(![JDConnection connectTo:[[NSUserDefaults standardUserDefaults] integerForKey: kActiveConnection]])
+				{
+					[self performSelectorOnMainThread:@selector(showAlert) withObject:nil waitUntilDone:NO];
+				}
+			}
 		}
 	}
 	return baseURL;
@@ -130,11 +133,29 @@ static NSMutableArray *connections = nil;
 
 - (void)getPackages:(NSObject<DataSourceDelegate> *)delegate
 {
+	// TODO: cancel in master, right now it just hangs
+	if(!self.baseURL) return;
+
 	NSURL *myURI = [[NSURL alloc] initWithString:@"/get/downloads/all/list" relativeToURL:self.baseURL];
 	SaxXmlReader *xmlReader = [[PackagesXmlReader alloc] initWithDelegate:delegate];
 	[xmlReader parseXMLFileAtURL:myURI parseError:nil];
 	[xmlReader release];
 	[myURI release];
+}
+
+- (void)showAlert
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	const UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to connect to remote host", @"")
+														  message:nil
+														 delegate:nil
+												cancelButtonTitle:@"OK"
+												otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+
+	[pool release];
 }
 
 @end
