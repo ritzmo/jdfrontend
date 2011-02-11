@@ -75,6 +75,8 @@
 		DADDC41213056A350066A271 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40A13056A350066A271 /* CellTextField.m */; };
 		DADDC41313056A350066A271 /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40C13056A350066A271 /* DisplayCell.m */; };
 		DADDC41413056A350066A271 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC40E13056A350066A271 /* EditableTableViewCell.m */; };
+		DADDC4EB13057CDE0066A271 /* SynchronousRequestReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC4EA13057CDE0066A271 /* SynchronousRequestReader.m */; };
+		DADDC4EC13057CDE0066A271 /* SynchronousRequestReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DADDC4EA13057CDE0066A271 /* SynchronousRequestReader.m */; };
 		DAF0635E12FADE5500507F2E /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635812FADE5500507F2E /* MGSplitCornersView.m */; };
 		DAF0635F12FADE5500507F2E /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635A12FADE5500507F2E /* MGSplitDividerView.m */; };
 		DAF0636012FADE5500507F2E /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0635C12FADE5500507F2E /* MGSplitViewController.m */; };
@@ -147,6 +149,8 @@
 		DADDC40C13056A350066A271 /* DisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayCell.m; sourceTree = "<group>"; };
 		DADDC40D13056A350066A271 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		DADDC40E13056A350066A271 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		DADDC4E913057CDE0066A271 /* SynchronousRequestReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronousRequestReader.h; sourceTree = "<group>"; };
+		DADDC4EA13057CDE0066A271 /* SynchronousRequestReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronousRequestReader.m; sourceTree = "<group>"; };
 		DAF0635612FADE5500507F2E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DAF0635712FADE5500507F2E /* MGSplitCornersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSplitCornersView.h; sourceTree = "<group>"; };
 		DAF0635812FADE5500507F2E /* MGSplitCornersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitCornersView.m; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				DA69945F12FF57EB00397A96 /* Constants.m */,
 				DA597F6512F9C94A0073723A /* JDConnection.h */,
 				DA597F6612F9C94A0073723A /* JDConnection.m */,
+				DADDC4E913057CDE0066A271 /* SynchronousRequestReader.h */,
+				DADDC4EA13057CDE0066A271 /* SynchronousRequestReader.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				DADDC40F13056A350066A271 /* CellTextField.m in Sources */,
 				DADDC41013056A350066A271 /* DisplayCell.m in Sources */,
 				DADDC41113056A350066A271 /* EditableTableViewCell.m in Sources */,
+				DADDC4EB13057CDE0066A271 /* SynchronousRequestReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +571,7 @@
 				DADDC41213056A350066A271 /* CellTextField.m in Sources */,
 				DADDC41313056A350066A271 /* DisplayCell.m in Sources */,
 				DADDC41413056A350066A271 /* EditableTableViewCell.m in Sources */,
+				DADDC4EC13057CDE0066A271 /* SynchronousRequestReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

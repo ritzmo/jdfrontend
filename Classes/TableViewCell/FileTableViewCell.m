@@ -60,7 +60,14 @@ NSString *kFileCell_ID = @"FileCell_ID";
 	progress.progress = file.percent/100.0f;
 
 	detailsLabel.textColor = file.detailsColor;
-	if(file.status)
+	if(!file.size) // either something wrong or old rc addon
+	{
+		if(file.status)
+			detailsLabel.text = file.status;
+		else
+			detailsLabel.text = [NSString stringWithFormat:@"%.2f%%", file.percent];
+	}
+	else if(file.status)
 	{
 		if(IS_IPAD() && file.percent > 0 && file.percent < 100)
 			detailsLabel.text = [NSString stringWithFormat:@"%.2f%% of %@, %@", file.percent, file.size, file.status];

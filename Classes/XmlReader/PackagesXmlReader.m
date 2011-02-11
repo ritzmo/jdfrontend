@@ -12,6 +12,8 @@
 
 static const char *kPackageElement = "packages";
 static const NSUInteger kPackageElementLength = 8;
+static const char *kPackageLegacyElement = "package";
+static const NSUInteger kPackageLegacyElementLength = 7;
 static const char *kPackageETA = "package_ETA";
 static const NSUInteger kPackageETALength = 11;
 static const char *kPackageInProgress = "package_linksinprogress";
@@ -64,7 +66,8 @@ static const NSUInteger kFileStatusLength = 11;
 
 - (void)elementFound:(const xmlChar *)localname prefix:(const xmlChar *)prefix uri:(const xmlChar *)URI namespaceCount:(int)namespaceCount namespaces:(const xmlChar **)namespaces attributeCount:(int)attributeCount defaultAttributeCount:(int)defaultAttributeCount attributes:(xmlSAX2Attributes *)attributes
 {
-    if(!strncmp((const char *)localname, kPackageElement, kPackageElementLength))
+	if(!strncmp((const char *)localname, kPackageElement, kPackageElementLength)
+	   || !strncmp((const char *)localname, kPackageLegacyElement, kPackageLegacyElementLength))
     {
 		NSInteger i = 0;
         self.current = [[[Package alloc] init] autorelease];
@@ -163,7 +166,8 @@ static const NSUInteger kFileStatusLength = 11;
 
 - (void)endElement:(const xmlChar *)localname prefix:(const xmlChar *)prefix uri:(const xmlChar *)URI
 {
-	if(!strncmp((const char *)localname, kPackageElement, kPackageElementLength))
+	if(!strncmp((const char *)localname, kPackageElement, kPackageElementLength)
+	   || !strncmp((const char *)localname, kPackageLegacyElement, kPackageLegacyElementLength))
 	{
 		[_delegate performSelectorOnMainThread: @selector(addPackage:)
                                     withObject: current

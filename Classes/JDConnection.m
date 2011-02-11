@@ -10,6 +10,7 @@
 
 #import "Constants.h"
 #import "PackagesXmlReader.h"
+#import "SynchronousRequestReader.h"
 
 static JDConnection *this = nil;
 static NSMutableArray *connections = nil;
@@ -18,11 +19,12 @@ static NSMutableArray *connections = nil;
 @interface JDConnection()
 @property (nonatomic, retain) NSURL *baseURL;
 @property (nonatomic, retain) NSString *currentString;
+@property (assign) NSInteger rcRevision;
 @end
 
 @implementation JDConnection
 
-@synthesize baseURL, currentString;
+@synthesize baseURL, currentString, rcRevision;
 
 + (BOOL)connectTo:(NSUInteger)idx
 {
@@ -47,6 +49,8 @@ static NSMutableArray *connections = nil;
 		else
 			this.baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:10025", newURL]];
 	}
+	this.rcRevision = -1;
+
 	return YES;
 }
 
@@ -131,12 +135,41 @@ static NSMutableArray *connections = nil;
 	return baseURL;
 }
 
+- (NSInteger)rcRevision
+{
+	if(rcRevision == -1)
+	{
+		@synchronized(self)
+		{
+			if(rcRevision != -1) return rcRevision;
+
+			NSError *error = nil;
+			NSURL *myURI = [[NSURL alloc] initWithString:@"/get/rcversion" relativeToURL:self.baseURL];
+			NSData *data = [SynchronousRequestReader sendSynchronousRequest:myURI returningResponse:nil error:&error];
+			[myURI release];
+			if(error == nil)
+			{
+				NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+				rcRevision = [myString integerValue];
+				[myString release];
+			}
+		}
+	}
+	return rcRevision;
+}
+
 - (void)getPackages:(NSObject<DataSourceDelegate> *)delegate
 {
 	// TODO: cancel in master, right now it just hangs
 	if(!self.baseURL) return;
 
-	NSURL *myURI = [[NSURL alloc] initWithString:@"/get/downloads/all/list" relativeToURL:self.baseURL];
+	NSString *relativeURL = nil;
+	if(self.rcRevision > 10696)
+		relativeURL = @"/get/downloads/all/list";
+	else
+		relativeURL = @"/get/downloads/alllist";
+
+	NSURL *myURI = [[NSURL alloc] initWithString:relativeURL relativeToURL:self.baseURL];
 	SaxXmlReader *xmlReader = [[PackagesXmlReader alloc] initWithDelegate:delegate];
 	[xmlReader parseXMLFileAtURL:myURI parseError:nil];
 	[xmlReader release];

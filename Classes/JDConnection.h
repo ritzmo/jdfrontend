@@ -14,6 +14,7 @@
 @private
 	NSURL *baseURL;
 	NSString *currentString;
+	NSInteger rcRevision;
 }
 
 + (BOOL)connectTo:(NSUInteger)idx;
