@@ -100,7 +100,13 @@
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	_reloading = YES;
-	[[JDConnection sharedInstance] getPackages:self];
+	const BOOL wasStarted = [[JDConnection sharedInstance] getPackages:self];
+	if(!wasStarted)
+	{
+		_reloading = NO;
+		[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:_tableView];
+		[_tableView reloadData];
+	}
 	[pool release];
 }
 

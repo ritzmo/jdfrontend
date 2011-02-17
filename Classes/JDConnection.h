@@ -25,6 +25,6 @@
 + (void)saveConnections;
 + (JDConnection *)sharedInstance;
 
-- (void)getPackages:(NSObject<DataSourceDelegate> *)delegate;
+- (BOOL)getPackages:(NSObject<DataSourceDelegate> *)delegate;
 
 @end

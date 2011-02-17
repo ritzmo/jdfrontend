@@ -158,10 +158,9 @@ static NSMutableArray *connections = nil;
 	return rcRevision;
 }
 
-- (void)getPackages:(NSObject<DataSourceDelegate> *)delegate
+- (BOOL)getPackages:(NSObject<DataSourceDelegate> *)delegate
 {
-	// TODO: cancel in master, right now it just hangs
-	if(!self.baseURL) return;
+	if(!self.baseURL) return NO;
 
 	NSString *relativeURL = nil;
 	if(self.rcRevision > 10696)
@@ -174,6 +173,7 @@ static NSMutableArray *connections = nil;
 	[xmlReader parseXMLFileAtURL:myURI parseError:nil];
 	[xmlReader release];
 	[myURI release];
+	return YES;
 }
 
 - (void)showAlert
