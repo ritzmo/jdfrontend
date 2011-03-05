@@ -21,6 +21,7 @@
 + (void)disconnect;
 + (NSInteger)getConnectedId;
 + (NSMutableArray *)getConnections;
++ (BOOL)isConnected;
 + (BOOL)loadConnections;
 + (void)saveConnections;
 + (JDConnection *)sharedInstance;

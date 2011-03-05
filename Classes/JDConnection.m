@@ -100,6 +100,11 @@ static NSMutableArray *connections = nil;
     [connections writeToFile:finalPath atomically:YES];
 }
 
++ (BOOL)isConnected
+{
+	return (this.baseURL != nil);
+}
+
 + (JDConnection *)sharedInstance
 {
 	if(this == nil)
@@ -127,7 +132,7 @@ static NSMutableArray *connections = nil;
 			{
 				if(![JDConnection connectTo:[[NSUserDefaults standardUserDefaults] integerForKey: kActiveConnection]])
 				{
-					[self performSelectorOnMainThread:@selector(showAlert) withObject:nil waitUntilDone:NO];
+					return nil;
 				}
 			}
 		}
@@ -160,7 +165,11 @@ static NSMutableArray *connections = nil;
 
 - (BOOL)getPackages:(NSObject<DataSourceDelegate> *)delegate
 {
-	if(!self.baseURL) return NO;
+	if(!self.baseURL)
+	{
+		[self performSelectorOnMainThread:@selector(showAlert) withObject:nil waitUntilDone:NO];
+		return NO;
+	}
 
 	NSString *relativeURL = nil;
 	if(self.rcRevision > 10696)

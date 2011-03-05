@@ -11,6 +11,8 @@
 
 @interface MainViewController : UITabBarController <UITabBarControllerDelegate>
 {
+@private
+	UIViewController *configListController;
 }
 
 @end
